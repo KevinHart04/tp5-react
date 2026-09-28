@@ -1,0 +1,163 @@
+/**
+ * Hoja de estilos TaskManager.css
+ * Implementa la paleta sobria (Tea Green a Charcoal Blue) con efecto Glassmorphism.
+ */
+
+:root {
+  /* Paleta base */
+  --tea-green: #c9e4ca;
+  --muted-teal: #87bba2;
+  --pacific-cyan: #55828b;
+  --dark-slate-grey: #3b6064;
+  --charcoal-blue: #364958;
+
+  /* Valores RGBA mapeados para el Glassmorphism */
+  --glass-bg: rgba(59, 96, 100, 0.35); /* dark-slate-grey con opacidad */
+  --glass-border: rgba(
+    201,
+    228,
+    202,
+    0.15
+  ); /* tea-green para el brillo de los bordes */
+  --glass-shadow: rgba(54, 73, 88, 0.6); /* charcoal-blue para la profundidad */
+}
+
+body {
+  /* Fondo principal con gradiente usando los tonos más oscuros */
+  background: radial-gradient(
+    circle at top left,
+    var(--dark-slate-grey),
+    var(--charcoal-blue)
+  );
+  color: var(--tea-green);
+  min-height: 100vh;
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: var(--tea-green);
+  margin: 0;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  padding: 24px;
+  margin-bottom: 2rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.glass-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  color: var(--tea-green);
+}
+
+.glass-input {
+  /* Fondo del input usando el color más oscuro de la paleta */
+  background: rgba(54, 73, 88, 0.5);
+  border: 1px solid var(--glass-border);
+  color: var(--tea-green);
+  padding: 10px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  border-color: var(--muted-teal);
+  background: rgba(54, 73, 88, 0.8);
+}
+
+.glass-btn {
+  /* Botones principales con buen contraste */
+  background: var(--muted-teal);
+  color: var(--charcoal-blue);
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.glass-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Botones de acción para las tareas */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Reemplazo semántico para editar, eliminar y finalizar manteniendo la sobriedad */
+.btn-edit {
+  background: var(--pacific-cyan);
+  color: var(--tea-green);
+}
+.btn-delete {
+  background: #9c5252;
+  color: var(--tea-green);
+  border: 1px solid rgba(201, 228, 202, 0.2);
+}
+.btn-finish {
+  background: var(--dark-slate-grey);
+  color: var(--tea-green);
+  border: 1px solid var(--muted-teal);
+}
+
+.task-item {
+  background: rgba(54, 73, 88, 0.4);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}

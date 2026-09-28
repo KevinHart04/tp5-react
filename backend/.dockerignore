@@ -1,0 +1,7 @@
+.# backend/.dockerignore
+.env
+.git
+.gitignore
+vendor/
+task-server
+task-server.exe

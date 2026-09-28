@@ -1,0 +1,28 @@
+# .gitignore (Raíz del proyecto)
+
+# Entorno y credenciales
+.env
+*/.env
+
+# Frontend (Node/Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/npm-debug.log*
+frontend/.eslintcache
+
+# Backend (Go)
+backend/task-server
+backend/task-server.exe
+backend/vendor/
+
+# Base de Datos
+# Evita subir los archivos binarios de Postgres si mapeas el volumen a una carpeta local
+pgdata/
+database/data/
+database/pgdata/
+
+# Editores y Sistema OS
+.vscode/
+.idea/
+.DS_Store
+*.swp

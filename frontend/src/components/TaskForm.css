@@ -1,0 +1,86 @@
+:root {
+  /* Paleta base */
+  --amber-honey: #eca400;
+  --cream: #eaf8bf;
+  --cerulean: #006992;
+  --yale-blue: #27476e;
+  --prussian-blue: #001d4a;
+
+  /* Aplicación semántica a la tarjeta del formulario */
+  --bg-card: var(--yale-blue);
+  --border-color: var(--cerulean);
+  --text-muted: var(--cream);
+  --input-bg: var(--prussian-blue);
+  --accent-color: var(--amber-honey);
+  --btn-bg: var(--amber-honey);
+  --btn-text: var(--prussian-blue);
+}
+
+.task-form-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+}
+
+/* Grilla para que los inputs queden en dos columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1; /* Ocupa las dos columnas */
+}
+
+.form-label {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+}
+
+.form-input {
+  background-color: var(--input-bg);
+  color: white;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+.submit-btn {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
